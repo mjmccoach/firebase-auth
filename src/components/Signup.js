@@ -1,27 +1,34 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Card, Button, Form } from 'react-bootstrap'
 
 export default function Signup() {
+
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+
     return (
        <>
        <Card>
            <Card.Body>
-               <h2 classnName="text-center mb-4">Sign Up</h2>
+               <h2 className="text-center mb-4">Sign Up</h2>
                <Form>
                    <Form.Group id="email">
                      <Form.Label>Email</Form.Label>
-                     <Form.control type="email" ref={emailRef}required></Form.control>
+                     <Form.Control type="email" ref={emailRef}required></Form.Control>
                    </Form.Group>
 
                    <Form.Group id="password">
                      <Form.Label>Password</Form.Label>
-                     <Form.control type="password" ref={passwordRef}required></Form.control>
+                     <Form.Control type="password" ref={passwordRef}required></Form.Control>
                    </Form.Group>
 
                    <Form.Group id="password-confirm">
                      <Form.Label>Password confirmation</Form.Label>
-                     <Form.control type="password" ref={passwordConfirmRef}required></Form.control>
+                     <Form.Control type="password" ref={passwordConfirmRef}required></Form.Control>
                    </Form.Group>
+
+                   <Button className="w-100" type="submit">Sign up</Button>
                </Form>
            </Card.Body>
        </Card>
@@ -31,3 +38,4 @@ export default function Signup() {
        </>
     )
 }
+
